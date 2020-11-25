@@ -1,3 +1,25 @@
-<h1>کرومیوم چیست؟ هرآنچه باید راجع به پروژه متن‌باز و رایگان گوگل بدانید</h1>
-<img src="https://digiato.com/wp-content/uploads/2020/11/chromium-image-800x450.jpg" alt="" srcset="">
-<p>از زمانی معرفی‌اش در سال ۲۰۰۸ میلادی، مرورگر گوگل کروم تبدیل به یکی از محبوب‌ترین متدهای گشت‌وگذار در اینترنت شده است. با این همه، آیا می‌دانستید که کروم در واقع یکی از زیرمجموعه‌های پروژه‌ای دیگر به نام «پروژه کرومیوم» است؟ این پروژه متن‌باز، با سرمایه‌گذاری گوگل کلید خورد و به ساخت مرورگر و سیستم عاملی منجر شد که به صورت رایگان در دسترس هرکسی قرار گرفته و توسعه‌دهندگان هم به راحتی قادر به توسعه اپلیکیشن برای آن هستند. امروز بسیاری از مرورگرها با فونداسیون کرومیومی توسعه‌ یافته‌اند که تیم گوگل در زمان نه‌چندان دور آن را ساخت: از جمله این مرورگرها می‌توان به اوپرا و مرورگر Edge مایکروسافت اشاره کرد.</p>
+<% if @articles %>
+<div class="row">
+
+    <% @articles.each do |article| %>
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <img src="<%= article.img_url %>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <small class="text-muted"><%= article.source.name %></small>
+                <h5 class="card-title"><a href="<%= article.url %>"><%= article.title %></a></h5>
+                <p class="card-text"><%= article.intro_text %></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <a type="button" class="btn btn-sm btn-outline-success">Like</a>
+                    </div>
+                    <small class="text-muted"><%= article.created_at.strftime('%m-%e-%y %H:%M') %></small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% end %>
+
+</div>
+<% end %>

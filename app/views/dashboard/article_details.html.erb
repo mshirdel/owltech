@@ -1,0 +1,21 @@
+<% if @article %>
+<div class="row">
+    <div class="col-md-4">
+        <img src="<%= @article.img_url %>" class="img-fluid" alt="" srcset="">
+    </div>
+    <div class="col-md-8">
+        <a href="<%= @article.url %>"><%= @article.title %></a>
+        <p><%= @article.intro_text %></p>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+                <a type="button" class="btn btn-sm btn-success">Publish</a>
+                <a type="button" class="btn btn-sm btn-outline-primary">Edit</a>
+                <a type="button" class="btn btn-sm btn-outline-danger">Remove</a>
+            </div>
+            <%= link_to  "Back", articles_path %>
+        </div>
+        
+    </div>
+</div>
+    
+<% end %>

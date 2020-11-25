@@ -1,0 +1,20 @@
+<% if @articles %>
+
+
+<% @articles.each do |article| %>
+<div class="row">
+    <div class="col-md-8">
+        <%= link_to article.title , details_path(article) %>
+    </div>
+    <div class="col-md-4">
+        <div class="btn-group">
+            <a type="button" class="btn btn-sm btn-success">Publish</a>
+            <a type="button" class="btn btn-sm btn-outline-primary">Edit</a>
+            <a type="button" class="btn btn-sm btn-outline-danger">Remove</a>
+        </div>
+    </div>
+</div>
+<hr>
+<% end %>
+
+<% end %>
