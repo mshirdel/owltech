@@ -1,37 +1,63 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Sources</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Home page url</th>
-      <th>Home entry css</th>
-      <th>Title css</th>
-      <th>Img css</th>
-      <th>Intro text css</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sources.each do |source| %>
-      <tr>
-        <td><%= source.name %></td>
-        <td><%= source.home_page_url %></td>
-        <td><%= source.home_entry_css %></td>
-        <td><%= source.title_css %></td>
-        <td><%= source.img_css %></td>
-        <td><%= source.intro_text_css %></td>
-        <td><%= link_to 'Show', source %></td>
-        <td><%= link_to 'Edit', edit_source_path(source) %></td>
-        <td><%= link_to 'Destroy', source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<% @sources.each do |source| %>
+<div class="row">
+    <div class="col-md-12">
+        <%= link_to 'Show', source, class: "btn btn-primary btn-sm"%>
+        <%= link_to 'Edit', edit_source_path(source), class: "btn btn-primary btn-sm" %>
+        <%= link_to 'Destroy', source, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        Name
+    </div>
+    <div class="col-md-10">
+        <%= source.name %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        Home page url
+    </div>
+    <div class="col-md-10">
+        <%= source.home_page_url %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        Home entry css
+    </div>
+    <div class="col-md-10">
+        <%= source.home_entry_css %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        Title css
+    </div>
+    <div class="col-md-10">
+        <%= source.title_css %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        Image css
+    </div>
+    <div class="col-md-10">
+        <%= source.img_css %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        Intro text css
+    </div>
+    <div class="col-md-10">
+        <%= source.intro_text_css %>
+    </div>
+</div>
+<% end %>
+<hr>
 <br>
 
 <%= link_to 'New Source', new_source_path %>
