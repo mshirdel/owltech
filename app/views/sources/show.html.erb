@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @source.name %>
+</p>
+
+<p>
+  <strong>Home page url:</strong>
+  <%= @source.home_page_url %>
+</p>
+
+<p>
+  <strong>Home entry css:</strong>
+  <%= @source.home_entry_css %>
+</p>
+
+<p>
+  <strong>Title css:</strong>
+  <%= @source.title_css %>
+</p>
+
+<p>
+  <strong>Img css:</strong>
+  <%= @source.img_css %>
+</p>
+
+<p>
+  <strong>Intro text css:</strong>
+  <%= @source.intro_text_css %>
+</p>
+
+<%= link_to 'Edit', edit_source_path(@source) %> |
+<%= link_to 'Back', sources_path %>

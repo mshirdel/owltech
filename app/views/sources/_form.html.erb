@@ -1,0 +1,47 @@
+<%= form_with(model: source, local: true) do |form| %>
+  <% if source.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(source.errors.count, "error") %> prohibited this source from being saved:</h2>
+
+      <ul>
+        <% source.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :home_page_url %>
+    <%= form.text_field :home_page_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :home_entry_css %>
+    <%= form.text_field :home_entry_css %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title_css %>
+    <%= form.text_field :title_css %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img_css %>
+    <%= form.text_field :img_css %>
+  </div>
+
+  <div class="field">
+    <%= form.label :intro_text_css %>
+    <%= form.text_field :intro_text_css %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
